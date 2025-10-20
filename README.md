@@ -11,8 +11,8 @@ Follow these steps to reproduce our results:
 Step 1: Install Dependencies
 
 # Clone the repository
-git clone https://github.com/ezylopx5/SHROOM2025.git
-cd SHROOM2025
+git clone https://github.com/ezylopx5/SHROOM-CAP2025.git
+cd SHROOM-CAP2025
 
 # Install required packages
 pip install -r requirements_clean.txt
