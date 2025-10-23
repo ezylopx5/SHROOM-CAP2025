@@ -1,14 +1,4 @@
-#!/usr/bin/env python3
-"""
-🚀 START TRAINING - XLM-RoBERTa-Large on Full 1.18M Dataset
-=============================================================
 
-Quick launcher for professor demo.
-
-Run from SHROOM directory:
-    cd /Users/haxx_sh/Desktop/JCNLP2025/SHROOM2025/SHROOM
-    python3 start_training_full_dataset.py
-"""
 
 import subprocess
 import sys
