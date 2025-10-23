@@ -16,12 +16,7 @@ import os
 from pathlib import Path
 
 def main():
-    print("""
-╔══════════════════════════════════════════════════════════════════╗
-║     XLM-RoBERTa-Large Training on 1.18M Balanced Dataset         ║
-║                 For Professor Demo Tomorrow!                     ║
-╚══════════════════════════════════════════════════════════════════╝
-    """)
+
     
     # Verify we're in the right directory
     current_dir = Path.cwd()
