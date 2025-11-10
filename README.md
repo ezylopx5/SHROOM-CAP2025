@@ -8,16 +8,17 @@ Evaluation: Macro F1 score for Factuality and Fluency mistakes
 🚀 Quick Setup & Execution
 Follow these steps to reproduce our results:
 
-Step 1: Install Dependencies
+🟢Step 1: Install Dependencies
 
 # Clone the repository
-git clone https://github.com/ezylopx5/SHROOM-CAP2025.git
+git clone https://github.com/ezylopx5/SHROOM-CAP2025
+
 cd SHROOM-CAP2025
 
 # Install required packages
-pip install -r requirements_clean.txt
+pip install -r requirements.txt
 
-Step 2: Validate Setup
+🟢Step 2: Validate Setup
 
 
 # Check if everything is configured correctly
@@ -32,7 +33,7 @@ GPU availability (if applicable)
 
 Model dependencies
 
-Step 3: Training (Two Options Available)
+🟢Step 3: Training (Two Options Available)
 We trained our model on an NVIDIA H200 GPU (141GB VRAM). Choose one of these approaches:
 
 Option A: Use the Guided Training Script (Recommended)
@@ -61,7 +62,7 @@ python train_xlm.py \
     --learning_rate 2e-5 \
     --max_length 256
     
-Step 4: Generate Competition Submissions
+🟢Step 4: Generate Competition Submissions
 After training completes, generate predictions for all 9 languages:
 
 python generate_final_submission.py \
@@ -75,17 +76,23 @@ Data-Centric Strategy: Unified 5 datasets → 124,821 balanced samples (172x inc
 
 Multilingual Power: XLM-RoBERTa-Large fine-tuned on 100 languages
 
-Infrastructure: Optimized for H200 GPU (1h14m training time)
+Infrastructure: Optimized for H200 GPU 
 
 📊 Project Structure
 
 SHROOM2025/
 ├── SHROOM_DATA/                 # Our unified 124k dataset
+
 ├── generate_final_submission.py # Step 4: Create submissions
+
 ├── start_training_full_dataset.py # Step 3A: Guided training
+
 ├── train_xlm.py                # Step 3B: Direct training
+
 ├── validate_pipeline.py        # Step 2: Setup validation
-├── requirements_clean.txt      # Step 1: Dependencies
+
+├── requirements.txt      # Step 1: Dependencies
+
 └── TRAINING_STRATEGY_GUIDE.md  # Detailed methodology
 
 
