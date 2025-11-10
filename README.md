@@ -96,5 +96,6 @@ SHROOM2025/
 └── TRAINING_STRATEGY_GUIDE.md  # Detailed methodology
 
 Our Team Name:"AGI"
+
 Competition Leaderboard: https://shroomcap.pythonanywhere.com/
 
