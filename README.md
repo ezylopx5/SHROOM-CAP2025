@@ -8,12 +8,12 @@ Evaluation: Macro F1 score for Factuality and Fluency mistakes
 🚀 Quick Setup & Execution
 Follow these steps to reproduce our results:
 
-🟢Step 1: Install Dependencies
-
 # Clone the repository
 git clone https://github.com/ezylopx5/SHROOM-CAP2025
 
 cd SHROOM-CAP2025
+
+🟢Step 1: Install Dependencies
 
 # Install required packages
 pip install -r requirements.txt
