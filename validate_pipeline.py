@@ -101,10 +101,10 @@ def validate_scripts():
     logger.info("🔍 Validating Python scripts...")
     
     scripts = [
-        'shroom_data_processor.py',
-        'checkpoint_system.py', 
-        'shroom_trainer.py',
-        'lightning_ai_start.py'
+        'train_xlm.py',
+        'unified_data_loader.py',
+        'generate_final_submission.py',
+        'start_training_full_dataset.py'
     ]
     
     for script in scripts:
@@ -128,18 +128,14 @@ def validate_imports():
     logger.info("🔍 Testing critical imports...")
     
     try:
-        # Test data processor
+        # Test data loader
         sys.path.insert(0, '.')
-        from shroom_data_processor import SHROOMDataProcessor
-        logger.info("✅ SHROOMDataProcessor import OK")
+        from unified_data_loader import UnifiedDataLoader
+        logger.info("✅ UnifiedDataLoader import OK")
         
-        # Test checkpoint system
-        from checkpoint_system import CheckpointSystem
-        logger.info("✅ CheckpointSystem import OK")
-        
-        # Test trainer (basic import)
-        from shroom_trainer import SHROOMEnsembleTrainer
-        logger.info("✅ SHROOMEnsembleTrainer import OK")
+        # Test train_xlm can be imported
+        import train_xlm
+        logger.info("✅ train_xlm import OK")
         
         return True
         
@@ -202,27 +198,25 @@ def run_validation():
     if not validate_imports():
         all_valid = False
     
-    # Validate notebook
-    if not validate_notebook():
-        all_valid = False
-    
     logger.info("="*50)
     
     if all_valid:
         logger.info("🎉 ALL VALIDATIONS PASSED!")
-        logger.info("✅ Pipeline is ready for Lightning AI deployment")
+        logger.info("✅ Pipeline is ready for training")
         logger.info("")
         logger.info("📋 Next steps:")
-        logger.info("1. Upload SHROOM_DATA folder to Lightning AI")
-        logger.info("2. Upload all Python scripts to Lightning AI")
-        logger.info("3. Select A100 GPU machine")
-        logger.info("4. Run: python lightning_ai_start.py")
+        logger.info("1. Run: python start_training_full_dataset.py")
+        logger.info("   OR")
+        logger.info("   python train_xlm.py --model_name xlm-roberta-large --data_dir SHROOM_DATA --output_dir outputs")
+        logger.info("")
+        logger.info("2. After training, generate submissions:")
+        logger.info("   python generate_final_submission.py --model_path <model_path> --data_dir SHROOM_DATA --output_dir submissions")
         logger.info("")
         logger.info("🚀 Good luck with your training!")
         return True
     else:
         logger.error("❌ VALIDATION FAILED!")
-        logger.error("Please fix the issues above before deploying")
+        logger.error("Please fix the issues above before training")
         return False
 
 if __name__ == "__main__":
